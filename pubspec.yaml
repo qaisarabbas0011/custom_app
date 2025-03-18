@@ -1,0 +1,28 @@
+name: firstapp
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  font_awesome_flutter: ^10.0.0 
+  animate_do: ^3.0.1
+  shared_preferences: ^2.1.0
+  # Add this if you are using FontAwesomeIcons
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/google-photos.png  # Fixed the typo here
+    - assets/pics.png
