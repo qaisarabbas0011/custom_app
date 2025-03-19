@@ -1,10 +1,8 @@
 # This file controls Flutter-level build steps. It should not be edited.
 cmake_minimum_required(VERSION 3.14)
 
+# Define the ephemeral directory dynamically.
 set(EPHEMERAL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ephemeral")
-
-# Configuration provided via flutter tool.
-set(EPHEMERAL_DIR "/path/to/directory")
 include("${EPHEMERAL_DIR}/generated_config.cmake")
 
 # TODO: Move the rest of this into files in ephemeral. See
@@ -14,6 +12,11 @@ set(WRAPPER_ROOT "${EPHEMERAL_DIR}/cpp_client_wrapper")
 # Set fallback configurations for older versions of the flutter tool.
 if (NOT DEFINED FLUTTER_TARGET_PLATFORM)
   set(FLUTTER_TARGET_PLATFORM "windows-x64")
+endif()
+
+# Ensure PROJECT_DIR is defined.
+if (NOT DEFINED PROJECT_DIR)
+  set(PROJECT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/..")
 endif()
 
 # === Flutter Library ===
