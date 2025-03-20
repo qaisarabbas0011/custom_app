@@ -21,6 +21,8 @@ class _SignUpPageState extends State<SignUpPage> with SingleTickerProviderStateM
   
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
+  
+
 
   @override
   void initState() {
